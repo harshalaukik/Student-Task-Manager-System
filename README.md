@@ -30,9 +30,18 @@ helps you save code, track changes, collaborate with others, and showcase your p
 Git: A tool that tracks changes in your code.
 GitHub: A website where you can store and share Git repositories online.
 
+Basic terminal commands-
+pwd - current folder location
+ls - displays the files and folders in your current location.(ls -a Shows detailed Info)
+cd - Change Directory
+cd .. - go back one folder
+cd ~ - go to Direct Home Folder
+mkdir — Create a folder
+
+
 Basic Cmnd for config - 
 git config --global user.name "Name"
 git config --global user.email "email"
 
-
+git init, status, add . , push , pull
 
