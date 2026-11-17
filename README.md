@@ -1,4 +1,7 @@
 # Student Task Manager System
+Our Target - Student Task Manager System (Full Stack App)
+Frontend → Backend → Auth → Dashboard → Deployment
+We Are Going to Develop It Day By Day Learning
 
 ## Day 1 – Understanding Websites, GitHub, and Browser Inspect
 
@@ -126,4 +129,52 @@ Today, I learned about:
 - Basic terminal commands for navigating directories.
 - Git configuration and commonly used Git commands.
 
-**Goal:** Build a strong foundation in web development, terminal usage, and GitHub before starting the Student Task Manager System project.
+**Goal:** Build a strong foundation in web development, terminal usage, and GitHub before starting the Student Task Manager System project. 
+
+## Day 2 – Login & Registration Page UI Development
+
+Today, I worked on creating the Login and Registration page for my Student Task Manager System project using HTML and CSS.
+
+### 1. Login Page
+
+Created a simple and responsive login page where users can enter their login details.
+
+**Features:**
+- Created a centered login form.
+- Added Email and Password input fields.
+- Added a Login button.
+- Added a link to navigate to the Registration page.
+- Used CSS Flexbox for proper alignment and centering.
+- Worked on spacing and made the layout responsive for mobile screens.
+
+### 2. Registration Page
+
+Created a registration page where new users can enter their details to register.
+
+**Features:**
+- Added Full Name input field.
+- Added Email input field.
+- Added Password input field.
+- Added Confirm Password input field.
+- Added a link to navigate back to the Login page.
+- Added placeholder areas for displaying error messages.
+- Maintained the same design and styling as the Login page.
+
+### 3. Concepts Practiced
+
+- HTML Forms and different input types.
+- Using labels for input fields.
+- CSS Flexbox for alignment and centering.
+- Margin and padding for proper spacing.
+- Creating responsive layouts using CSS.
+- Connecting multiple HTML pages using anchor tags.
+- Writing clean and structured HTML and CSS.
+
+### 4. What I Learned Today
+
+Today, I got more practice with HTML forms and CSS Flexbox. I learned how to create login and registration forms, align elements properly, and connect two HTML pages using navigation links.
+
+I also understood how to maintain a consistent design across multiple pages and make the layout work on mobile screens.
+
+**Day 2 Completed:** Successfully worked on the basic UI of Login and Registration pages for the Student Task Manager System.
+

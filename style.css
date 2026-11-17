@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 20px;
+}
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 400px;
+  padding: 25px;
+}
+.login-form h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 5px;
+}
+
+#btn {
+  padding: 12px;
+  background-color: aqua;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+@media (max-width: 480px) {
+}
