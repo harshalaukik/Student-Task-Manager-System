@@ -3,8 +3,13 @@
   margin: 0;
   padding: 0;
 }
-
-.login-container {
+#login-section{
+  display: flex;
+}
+#registration-section{
+  display: none;
+}
+.main-container {
   display: flex;
   justify-content: center;
   align-items: center;

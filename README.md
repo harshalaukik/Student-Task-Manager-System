@@ -178,3 +178,13 @@ I also understood how to maintain a consistent design across multiple pages and 
 
 **Day 2 Completed:** Successfully worked on the basic UI of Login and Registration pages for the Student Task Manager System.
 
+Day 3 now we are going to take our multiple page application to one page application 
+
+also we dont want to reload The page  
+
+using event preventDfult to stoping link click and we manualy add our code to conditional rendering
+
+also firtly i build it for two section but what if the section increased in feuture  and used to hide display in css and too much things got messy so my second approch was reusable code for multiple sections also i dont want to write same logic for every sections so i take it
+1. Created a reusable function.
+2. added event listner to both links 
+3. 
