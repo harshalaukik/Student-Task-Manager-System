@@ -178,13 +178,38 @@ I also understood how to maintain a consistent design across multiple pages and 
 
 **Day 2 Completed:** Successfully worked on the basic UI of Login and Registration pages for the Student Task Manager System.
 
-Day 3 now we are going to take our multiple page application to one page application 
+## Day 3
 
-also we dont want to reload The page  
+### Task Title:
+Frontend Navigation and View Switching
 
-using event preventDfult to stoping link click and we manualy add our code to conditional rendering
+### What I Did:
+Today, I implemented navigation between the Login and Registration sections of my project. Both sections are placed in the same HTML file, and JavaScript is used to switch between them without reloading the page.
 
-also firtly i build it for two section but what if the section increased in feuture  and used to hide display in css and too much things got messy so my second approch was reusable code for multiple sections also i dont want to write same logic for every sections so i take it
-1. Created a reusable function.
-2. added event listner to both links 
-3. 
+### What I Added:
+- Added Login and Registration sections.
+- Added navigation links to switch between both sections.
+- Used CSS to hide the Registration section initially.
+- Used JavaScript to show and hide sections.
+- Added click event listeners to handle navigation.
+
+### My Approach:
+First, I created both Login and Registration sections in HTML. I used CSS to hide the Registration section initially, so only the Login section appears when the website loads.
+
+Then, I selected the required sections and navigation links using `document.getElementById()`.
+
+After that, I used `addEventListener()` to handle click events. When the Registration link is clicked, the Login section gets hidden and the Registration section becomes visible. Similarly, clicking the Login link switches back to the Login section.
+
+I also used `event.preventDefault()` to prevent the browser from navigating to another page when clicking the links.
+
+### What I Learned:
+- DOM manipulation using `document.getElementById()`.
+- Event handling using `addEventListener()`.
+- How `event.preventDefault()` works.
+- How to show and hide elements using `style.display`.
+- How to switch between different views using JavaScript.
+- How to prevent a full page reload during navigation.
+- How CSS and JavaScript work together to control UI visibility.
+
+### Outcome:
+Successfully implemented navigation between Login and Registration sections without a full page reload. The navigation works smoothly, and both sections maintain a consistent UI design.
