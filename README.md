@@ -213,3 +213,47 @@ I also used `event.preventDefault()` to prevent the browser from navigating to a
 
 ### Outcome:
 Successfully implemented navigation between Login and Registration sections without a full page reload. The navigation works smoothly, and both sections maintain a consistent UI design.
+
+# Day 4
+
+### Task Title:
+Client-Side Form Validation
+
+### Concepts Revised:
+- JavaScript validation logic
+- Regular expressions (basic email validation)
+- Event handling
+- Conditional statements (`if/else`)
+- DOM manipulation
+- Error handling patterns
+
+### What I Did:
+- Added client-side validation to both login and registration forms.
+- Implemented email format validation using a regular expression.
+- Added password validation to ensure a minimum length of 6 characters.
+- Added confirm password validation to check whether both passwords match.
+- Added name validation to ensure the name field is not empty.
+- Displayed inline error messages below the respective input fields.
+- Used `event.preventDefault()` to prevent form submission when validation fails.
+- Used separate submit event listeners for login and registration forms.
+
+### My Approach:
+I first selected the required form elements and error message elements using JavaScript DOM methods.
+
+I kept login and registration validation separate because both forms have different validation requirements.
+
+I used a regular expression to validate email formats and conditional statements to check password length, empty fields, and password matching.
+
+I also used a boolean variable (`isValid`) to keep track of the validation status. Before checking the inputs, I cleared the previous error messages so that old errors would not remain visible.
+
+### What I Learned:
+- How to validate form inputs using JavaScript.
+- How to use regular expressions for basic email validation.
+- How to check password length and compare password values.
+- How to display error messages dynamically using `textContent`.
+- How to use `isValid` to manage multiple validation conditions.
+- Why `event.preventDefault()` is important in form validation.
+- How to handle different forms using separate event listeners.
+
+### Outcome:
+Successfully implemented client-side validation for both login and registration forms with inline error messages and basic input validation.

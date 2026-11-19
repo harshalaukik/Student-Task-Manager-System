@@ -9,77 +9,84 @@
   <body>
     <main class="main-container">
       <section id="login-section">
-        <form class="login-form">
+        <form class="form" id="login-form" novalidate>
           <h1>Login Page</h1>
           <label for="email">Email:</label>
           <input
             type="email"
-            id="email"
+            class="email"
             name="email"
+            id="login-email"
             placeholder="Enter Email"
             required
           />
+          <span class="error" id="login-email-error"></span>
           <label for="password">Password:</label>
           <input
             type="password"
-            id="password"
+            class="password"
             name="password"
+            id="login-password"
             placeholder="Enter Password"
             required
           />
-          <input type="submit" id="btn" />
+          <span class="error" id="login-password-error"></span>
+          <input type="submit" class="btn" />
           <p>
             Don't have an account?
-            <a href="registration.html" id="registration-link"> Registration</a>
+            <a href="#" id="registration-link"> Registration</a>
           </p>
         </form>
       </section>
 
       <section id="registration-section">
-        <div class="login-container">
+        <form class="form" id="registration-form" novalidate>
           <!-- needs change in class name -->
-          <form class="login-form">
-            <!-- needs change in class name -->
-            <h1>Registration Page</h1>
-            <label for="name">Full Name:</label>
-            <input
-              type="text"
-              id="name"
-              name="name"
-              placeholder="Enter Name"
-              required
-            />
-            <label for="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              placeholder="Enter Email"
-              required
-            />
-            <label for="password">Password:</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              placeholder="Enter Password"
-              required
-            />
-            <label for="password">Confirm Password:</label>
-            <input
-              type="password"
-              id="confirm-password"
-              name="confirm password"
-              placeholder="Enter Password"
-              required
-            />
-            <input type="submit" id="btn" />
-            <p>
-              Have an account?
-              <a href="index.html" id="login-link"> Login</a>
-            </p>
-          </form>
-        </div>
+          <h1>Registration Page</h1>
+          <label for="name">Full Name:</label>
+          <input
+            type="text"
+            id="registration-name"
+            name="name"
+            placeholder="Enter Name"
+            required
+          />
+          <span class="error" id="name-error"></span>
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            class="email"
+            id="registration-email"
+            name="email"
+            placeholder="Enter Email"
+            required
+          />
+          <span class="error" id="registration-email-error"></span>
+          <label for="password">Password:</label>
+          <input
+            type="password"
+            class="password"
+            name="password"
+            id="registration-password"
+            placeholder="Enter Password"
+            required
+          />
+          <span class="error" id="registration-password-error"></span>
+          <label for="password">Confirm Password:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm password"
+            placeholder="Enter Password"
+            required
+          />
+          <span class="error" id="confirm-password-error"></span>
+          <input type="submit" class="btn" />
+          <p>
+            Have an account?
+            <a href="index.html" id="login-link"> Login</a>
+          </p>
+        </form>
       </section>
     </main>
 
