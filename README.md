@@ -257,3 +257,44 @@ I also used a boolean variable (`isValid`) to keep track of the validation statu
 
 ### Outcome:
 Successfully implemented client-side validation for both login and registration forms with inline error messages and basic input validation.
+
+# Student Task Manager System
+
+## Day 5 – Dashboard UI Layout
+
+Today, I worked on designing the Dashboard UI for my Student Task Manager System using HTML and CSS.
+
+The main goal was to create a clean dashboard layout with sidebar navigation and a main content area.
+
+### 1. Task Description
+
+Created a static dashboard interface to provide a basic structure for the Student Task Manager System.
+
+### 2. Features Implemented
+
+- Created a sidebar navigation.
+- Added Dashboard, Tasks, and Logout navigation items.
+- Created a welcome section in the main content area.
+- Added placeholder statistics cards.
+- Used CSS Grid and Flexbox to structure and align the layout.
+- Maintained proper spacing and alignment between different sections.
+- Organized the layout to make the code easy to understand and maintain.
+
+### 3. Concepts Practiced
+
+- CSS Grid for creating the dashboard layout.
+- CSS Flexbox for alignment and positioning.
+- Layout design patterns.
+- Margin and padding for proper spacing.
+- Component structuring.
+- Visual hierarchy and content organization.
+
+### 4. What I Learned Today
+
+Today, I learned how to structure a dashboard layout using CSS Grid and Flexbox.
+
+I understood how to divide a webpage into different sections, such as a sidebar and main content area. I also practiced arranging multiple statistics cards and maintaining proper spacing between elements.
+
+I got a better understanding of how dashboards are structured and how to organize HTML and CSS code for better readability.
+
+**Day 5 Completed:** Successfully created a static Dashboard UI with sidebar navigation, a welcome section, and placeholder statistics cards.
