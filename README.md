@@ -298,3 +298,77 @@ I understood how to divide a webpage into different sections, such as a sidebar 
 I got a better understanding of how dashboards are structured and how to organize HTML and CSS code for better readability.
 
 **Day 5 Completed:** Successfully created a static Dashboard UI with sidebar navigation, a welcome section, and placeholder statistics cards.
+
+
+## Day 6 – Task List Interface
+
+### Task Overview
+Developed the Task List interface for the Student Task Manager System. The main focus was to create a clean and structured layout for displaying tasks.
+
+### What I Did
+- Created a Task section in the dashboard.
+- Added a Task List heading.
+- Created task cards to display task information.
+- Added a title and description to each task card.
+- Added a status dropdown with Pending and Completed options.
+- Added an "Add Task" button.
+- Used Flexbox to arrange task card content properly.
+- Maintained consistent spacing, colors, and styling.
+
+### My Approach
+First, I created the basic structure of the Task section using HTML. Then I divided the task card into separate containers to display the task details and status.
+
+I used Flexbox to align the content and CSS properties like padding, gap, and border-radius to make the cards clean and readable.
+
+I also added different styles for Pending and Completed statuses to make them visually distinguishable.
+
+### What I Learned
+- How to structure UI components using HTML.
+- How to create reusable card layouts.
+- How to use Flexbox for alignment and spacing.
+- How to style dropdown elements.
+- How to maintain consistency across UI components.
+
+---
+
+## Day 7 – Task Creation Modal
+
+### Task Overview
+Implemented a modal interface for adding new tasks. The main focus was to understand modal design patterns, overlay behavior, and event handling.
+
+### What I Did
+- Created a modal for adding new tasks.
+- Added an overlay behind the modal.
+- Added Title and Description input fields.
+- Added Save and Cancel buttons.
+- Used CSS positioning to center the modal on the screen.
+- Used z-index to manage the layering of the overlay and modal.
+- Styled the modal with proper spacing, colors, and borders.
+- Worked on opening and closing the modal using JavaScript events.
+
+### My Approach
+First, I created the modal structure using HTML with a heading, form fields, and buttons.
+
+Then I designed the modal using CSS Flexbox to arrange the elements vertically and maintain proper spacing.
+
+For the overlay, I used `position: fixed` and `inset: 0` so that it covers the entire screen.
+
+I used `z-index` to keep the overlay behind the modal. I also used JavaScript event handling to control the modal visibility through the Add Task and Cancel buttons.
+
+### What I Learned
+- How modal components work.
+- How to create a full-screen overlay.
+- How to use `position: fixed` and `z-index`.
+- How to center elements using Flexbox.
+- How to handle button click events using JavaScript.
+- How to organize and style form elements inside a modal.
+
+---
+
+## Overall Learning
+
+Through Day 6 and Day 7, I learned how to structure task cards and create a modal interface.
+
+I also improved my understanding of Flexbox, CSS positioning, overlay behavior, and JavaScript event handling.
+
+These tasks helped me build the UI components required for the Student Task Manager System and understand how different parts of a dashboard work together.

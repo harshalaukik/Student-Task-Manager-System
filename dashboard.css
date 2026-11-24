@@ -13,6 +13,7 @@ body{
     display: grid;
     grid-template-columns: 220px minmax(0, 1fr);
     min-height: 100vh;
+    position: relative;
 }
 
 /* Sidebar */
@@ -63,7 +64,7 @@ body{
 
 /* Dashboard statistics */
 .stats-container {
-    display: none;
+    display: flex;
     justify-content: space-between;
     gap: 20px;
     margin: 20px;
@@ -86,7 +87,7 @@ body{
 
 /* Task section */
 .task-section {
-    display: flex;
+    display: none;
     flex-direction: column;
     align-items: center;
     gap: 25px;
@@ -185,7 +186,93 @@ body{
     color: #0F5132;
     border-color: #A3CFBB;
 }
+/* Modal Overlay */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(20, 45, 78, 0.65);
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
+/* Modal */
+.modal {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+
+    width: 100%;
+    max-width: 450px;
+    padding: 30px;
+
+    background-color: #FFFFFF;
+    color: #142D4E;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* Modal Heading */
+.modal h1 {
+    font-size: 26px;
+    text-align: center;
+}
+
+/* Form */
+.modal form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Labels */
+.modal label {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.modal input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #BBE1FA;
+    border-radius: 8px;
+    outline: none;
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+
+.modal input[type="text"]:focus {
+    border-color: #3282B8;
+}
+
+.modal-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px;
+}
+.save{
+    background-color: #3282B8;
+    color: white;
+    border: none;
+    padding: 11px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 15px;
+   
+}
+
+.cancel {
+    text-decoration: none;
+    color: white;
+    background-color: #DC3545;
+    padding: 11px 22px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 15px;
+}
 
 /* Mobile responsive design */
 @media (max-width: 600px) {

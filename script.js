@@ -11,19 +11,50 @@ let registrationEmailError = document.getElementById("registration-email-error")
 let confirmPasswordError = document.getElementById("confirm-password-error");
 let registrationPasswordError = document.getElementById("registration-password-error");
 let registrationNameError = document.getElementById("name-error");
+let taskButton = document.getElementById("task-button");
+let statSection = document.getElementById("stats-section");
+let taskSection = document.getElementById("task-section");
+let taskLink =document.getElementById("task-link");
+let dashboardLink =document.getElementById("dashboard-link");
+let modalContainer = document.getElementById("modal-container");
+let saveModal = document.getElementById("save-modal");
+let cancelModal =document.getElementById("cancel-modal");
 
 // Page Navigation Switch Login & Registration
 
 function changeView(view) {
-  if (view === "login") {
-    loginSection.style.display = "flex";
-    regSection.style.display = "none";
-  } else {
-    regSection.style.display = "flex";
-    loginSection.style.display = "none";
+  if (loginSection) {
+    loginSection.style.display = view === "login" ? "flex" : "none";
+  }
+
+  if (regSection) {
+    regSection.style.display = view === "register" ? "flex" : "none";
+  }
+
+  if (statSection) {
+    statSection.style.display = view === "dashboard" ? "flex" : "none";
+  }
+
+  if (taskSection) {
+    taskSection.style.display = view === "task" ? "flex" : "none";
   }
 }
 
+if (taskLink) {
+  taskLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    changeView("task");
+  });
+}
+
+if (dashboardLink) {
+  dashboardLink.addEventListener("click", function (event) {
+    event.preventDefault();
+    changeView("dashboard");
+  });
+}
+
+if(loginLink){
 loginLink.addEventListener("click", function (event) {
   event.preventDefault();
   changeView("login");
@@ -32,10 +63,12 @@ regLink.addEventListener("click", function (event) {
   event.preventDefault();
   changeView("register");
 });
+};
 
 // Form Validation
 
 // Login Form Validation
+if(loginForm){
 loginForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const loginEmail = document.getElementById("login-email").value.trim();
@@ -59,9 +92,10 @@ loginForm.addEventListener("submit", function (event) {
     alert("Form submitted successfully!");
   }
 });
+};
 
 // Registration Form Validations
-
+if(registrationForm){
 registrationForm.addEventListener("submit", function (event) {
   event.preventDefault();
   const uname = document.getElementById("registration-name").value.trim();
@@ -101,3 +135,15 @@ registrationForm.addEventListener("submit", function (event) {
     alert("Form submitted successfully!");
   }
 });
+};
+
+if(taskButton){
+  taskButton.addEventListener("click",function(){
+modalContainer.style.display= "flex";
+  });
+}
+if(cancelModal){
+  cancelModal.addEventListener("click",function(){
+    modalContainer.style.display= "none";
+  });
+}
