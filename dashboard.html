@@ -10,22 +10,69 @@
     <div class="container">
       <aside class="sidebar">
         <ul>
-          <li><a href="#">DASHBOARD</a></li>
-          <li><a href="#">TASK</a></li>
+          <li><a href="#" id="dashboard-link">DASHBOARD</a></li>
+          <li><a href="#" id="task-link">TASK</a></li>
         </ul>
-        
-        <ul><li><a href="#">Logout</a></li></ul>
+
+        <ul>
+          <li><a href="#">Logout</a></li>
+        </ul>
       </aside>
 
       <main class="main-content">
-        <header class="welcome">Welcome Section</header>
+        <header class="welcome">
+          <h1>Welcome, User!</h1>
+        </header>
 
-        <section class="stats-container">
+        <section class="stats-container" id="stats-section">
           <div>Total Tasks</div>
           <div>Completed Tasks</div>
           <div>Pending Tasks</div>
         </section>
+
+        <section class="task-section">
+          <div class="task-section-header">
+            <h1>My Tasks</h1>
+            <p>Manage and track daily task</p>
+          </div>
+          <div class="task-container">
+            <div class="task-container-header">
+              <h1>Task List</h1>
+              <button class="task-btn" id="task-button">Add Task</button>
+            </div>
+            <div class="task-card">
+              <div class="card-container">
+                <div>
+                  <h1>Title</h1>
+                  <p>Description</p>
+                </div>
+                <div>
+                  <select name="status" id="task-status" class="status-option">
+                    <option value="pending" selected>Pending</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                </div>
+                
+              </div>
+               <div class="card-container">
+                <div>
+                  <h1>Title</h1>
+                  <p>Description</p>
+                </div>
+                <div>
+                  <select name="status" id="task-status" class="status-option">
+                    <option value="pending" selected>Pending</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                </div>
+                
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
+
+    <script src="script.js"></script>
   </body>
 </html>
