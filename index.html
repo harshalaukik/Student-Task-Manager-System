@@ -3,93 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Login</title>
+    <title>Student Task Manager</title>
   </head>
   <body>
-    <main class="main-container">
-      <section id="login-section">
-        <form class="form" id="login-form" novalidate>
-          <h1>Login Page</h1>
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            class="email"
-            name="email"
-            id="login-email"
-            placeholder="Enter Email"
-            required
-          />
-          <span class="error" id="login-email-error"></span>
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            class="password"
-            name="password"
-            id="login-password"
-            placeholder="Enter Password"
-            required
-          />
-          <span class="error" id="login-password-error"></span>
-          <input type="submit" class="btn" />
-          <p>
-            Don't have an account?
-            <a href="#" id="registration-link"> Registration</a>
-          </p>
-        </form>
-      </section>
-
-      <section id="registration-section">
-        <form class="form" id="registration-form" novalidate>
-          <!-- needs change in class name -->
-          <h1>Registration Page</h1>
-          <label for="name">Full Name:</label>
-          <input
-            type="text"
-            id="registration-name"
-            name="name"
-            placeholder="Enter Name"
-            required
-          />
-          <span class="error" id="name-error"></span>
-          <label for="email">Email:</label>
-          <input
-            type="email"
-            class="email"
-            id="registration-email"
-            name="email"
-            placeholder="Enter Email"
-            required
-          />
-          <span class="error" id="registration-email-error"></span>
-          <label for="password">Password:</label>
-          <input
-            type="password"
-            class="password"
-            name="password"
-            id="registration-password"
-            placeholder="Enter Password"
-            required
-          />
-          <span class="error" id="registration-password-error"></span>
-          <label for="password">Confirm Password:</label>
-          <input
-            type="password"
-            id="confirm-password"
-            name="confirm password"
-            placeholder="Enter Password"
-            required
-          />
-          <span class="error" id="confirm-password-error"></span>
-          <input type="submit" class="btn" />
-          <p>
-            Have an account?
-            <a href="index.html" id="login-link"> Login</a>
-          </p>
-        </form>
-      </section>
-    </main>
-
-    <script src="script.js"></script>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
