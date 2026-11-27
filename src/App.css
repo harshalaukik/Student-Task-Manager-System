@@ -247,6 +247,20 @@ body{
     color: #0F5132;
     border-color: #A3CFBB;
 }
+.task-options{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    gap: 10px;
+}
+.task-delete{
+        background: none;
+  border: none;
+  color: rgb(255, 0, 0);
+  cursor: pointer;
+  font: inherit;
+}
+
 /* Modal Overlay */
 .modal-overlay {
     position: fixed;

@@ -1,58 +1,108 @@
+
 import { useState } from "react";
 import TaskModal from "./TaskModal";
 
+function Task() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-function Task(){
-  const [isModalOpen,setIsModalOpen]=useState(false);
-    return (
-          <>
-         <section className="task-section" id="task-section">
-          <div className="task-section-header">
-            <h1>My Tasks</h1>
-            <p>Manage and track daily task</p>
-          </div>
-          <div className="task-container">
-            <div className="task-container-header">
-              <h1>Task List</h1>
-              <button className="task-btn" id="task-button" onClick={()=>{setIsModalOpen(true)}}>Add Task</button>
-            </div>
-            <div className="task-card">
-              <div className="card-container">
-                <div>
-                  <h1>Title</h1>
-                  <p>Description</p>
-                </div>
-                <div>
-                  <select name="status" id="task-status" className="status-option">
-                    <option value="pending" selected>Pending</option>
-                    <option value="completed">Completed</option>
-                  </select>
-                </div>
-              </div>
-              <div className="card-container">
-                <div>
-                  <h1>Title</h1>
-                  <p>Description</p>
-                </div>
-                <div>
-                  <select name="status" id="task-status" className="status-option">
-                    <option value="pending" selected>Pending</option>
-                    <option value="completed">Completed</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-{isModalOpen && (
- <TaskModal  onClose={() => setIsModalOpen(false)}/>
-)
+  const [tasks, setTasks] = useState([
+    {
+      id: 1,
+      title: "Making Delete tasks functionality",
+      description: "Delete task banana hai",
+      completed: false
+    }
+  ]);
 
-}
-     
-      
-      </>
+  function addTask(newTask) {
+    setTasks((prevTasks) => [
+      ...prevTasks,
+      newTask
+    ]);
+  }
+
+  function handleStatusChange(id, status) {
+    setTasks((prevTasks) =>
+      prevTasks.map((task) =>
+        task.id === id
+          ? {
+              ...task,
+              completed: status === "completed"
+            }
+          : task
+      )
     );
-};
+  }
+
+
+  function deleteTask(taskId){
+
+     setTasks((prevItems) => prevItems.filter((item) => item.id !== taskId));
+  }
+
+  return (
+    <>
+      <section className="task-section" id="task-section">
+        <div className="task-section-header">
+          <h1>My Tasks</h1>
+          <p>Manage and track daily task</p>
+        </div>
+
+        <div className="task-container">
+          <div className="task-container-header">
+            <h1>Task List</h1>
+
+            <button
+              className="task-btn"
+              onClick={() => setIsModalOpen(true)}
+            >
+              Add Task
+            </button>
+          </div>
+
+          <div className="task-card">
+            {tasks.map((task) => (
+              <div className="card-container" key={task.id}>
+                <div>
+                  <h1>{task.title}</h1>
+                  <p>{task.description}</p>
+                </div>
+
+                <div className="task-options">
+                  <select
+                    className="status-option"
+                    value={
+                      task.completed
+                        ? "completed"
+                        : "pending"
+                    }
+                    onChange={(event) =>
+                      handleStatusChange(
+                        task.id,
+                        event.target.value
+                      )
+                    }
+                  >
+                    <option value="pending">Pending</option>
+                    <option value="completed">Completed</option>
+                  </select>
+                  <div><button className="task-delete" onClick={() => deleteTask(task.id)}>Delete</button></div>
+                </div>
+                
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {isModalOpen && (
+        <TaskModal
+          onClose={() => setIsModalOpen(false)}
+          onAddTask={addTask}
+        />
+      )}
+    </>
+  );
+}
 
 export default Task;
