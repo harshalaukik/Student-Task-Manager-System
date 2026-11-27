@@ -1,24 +1,30 @@
-
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import TaskModal from "./TaskModal";
 
 function Task() {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Making Delete tasks functionality",
-      description: "Delete task banana hai",
-      completed: false
-    }
-  ]);
+  const [tasks, setTasks] = useState(() => {
+  const savedTasks = localStorage.getItem("tasks");
+
+  return savedTasks
+    ? JSON.parse(savedTasks)
+    : [
+        {
+          id: 1,
+          title: "Testing Title",
+          description: "Testing task description",
+          completed: false
+        }
+      ];
+});
+
+useEffect(() => {
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+}, [tasks]);
 
   function addTask(newTask) {
-    setTasks((prevTasks) => [
-      ...prevTasks,
-      newTask
-    ]);
+    setTasks((prevTasks) => [...prevTasks, newTask]);
   }
 
   function handleStatusChange(id, status) {
@@ -27,17 +33,15 @@ function Task() {
         task.id === id
           ? {
               ...task,
-              completed: status === "completed"
+              completed: status === "completed",
             }
-          : task
-      )
+          : task,
+      ),
     );
   }
 
-
-  function deleteTask(taskId){
-
-     setTasks((prevItems) => prevItems.filter((item) => item.id !== taskId));
+  function deleteTask(taskId) {
+    setTasks((prevItems) => prevItems.filter((item) => item.id !== taskId));
   }
 
   return (
@@ -52,10 +56,7 @@ function Task() {
           <div className="task-container-header">
             <h1>Task List</h1>
 
-            <button
-              className="task-btn"
-              onClick={() => setIsModalOpen(true)}
-            >
+            <button className="task-btn" onClick={() => setIsModalOpen(true)}>
               Add Task
             </button>
           </div>
@@ -71,24 +72,23 @@ function Task() {
                 <div className="task-options">
                   <select
                     className="status-option"
-                    value={
-                      task.completed
-                        ? "completed"
-                        : "pending"
-                    }
+                    value={task.completed ? "completed" : "pending"}
                     onChange={(event) =>
-                      handleStatusChange(
-                        task.id,
-                        event.target.value
-                      )
+                      handleStatusChange(task.id, event.target.value)
                     }
                   >
                     <option value="pending">Pending</option>
                     <option value="completed">Completed</option>
                   </select>
-                  <div><button className="task-delete" onClick={() => deleteTask(task.id)}>Delete</button></div>
+                  <div>
+                    <button
+                      className="task-delete"
+                      onClick={() => deleteTask(task.id)}
+                    >
+                      Delete
+                    </button>
+                  </div>
                 </div>
-                
               </div>
             ))}
           </div>
@@ -96,10 +96,7 @@ function Task() {
       </section>
 
       {isModalOpen && (
-        <TaskModal
-          onClose={() => setIsModalOpen(false)}
-          onAddTask={addTask}
-        />
+        <TaskModal onClose={() => setIsModalOpen(false)} onAddTask={addTask} />
       )}
     </>
   );

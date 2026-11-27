@@ -372,3 +372,350 @@ Through Day 6 and Day 7, I learned how to structure task cards and create a moda
 I also improved my understanding of Flexbox, CSS positioning, overlay behavior, and JavaScript event handling.
 
 These tasks helped me build the UI components required for the Student Task Manager System and understand how different parts of a dashboard work together.
+
+
+# Day 8 – Dynamic Task Management (React)
+
+## Task Overview
+
+**Task Title:** Dynamic Task Management (Frontend State)
+
+**Objective:** Enable dynamic task creation, rendering, deletion, and status updates using frontend state.
+
+For this task, I implemented dynamic task management using **React** instead of directly manipulating the DOM with JavaScript.
+
+My main goal was to understand how React manages data through state and automatically updates the UI whenever the data changes.
+
+## Concepts Covered
+
+- Arrays and objects
+- React components
+- React state using useState
+- Dynamic list rendering
+- Event handling
+- Props and component communication
+- State management
+- Immutable state updates
+- Conditional rendering
+- Efficient UI updates
+
+## Features Implemented
+
+### 1. Dynamic Task Creation
+
+- Created an Add Task button.
+- Implemented a separate TaskModal component for creating tasks.
+- Added input fields for task title and description.
+- Used React state to store newly created tasks.
+- Dynamically added new tasks to the task list without reloading the page.
+
+### 2. Dynamic Task Rendering
+
+- Stored tasks as an array of objects.
+- Used React's list rendering to display tasks dynamically.
+- Displayed task title, description, and status.
+- Used unique task IDs to identify individual tasks.
+
+### 3. Delete Task Functionality
+
+- Added a Delete button to each task card.
+- Used the task ID to identify the selected task.
+- Implemented task deletion using the filter method.
+- Updated the task list through React state.
+- Removed the selected task from the UI without refreshing the page.
+
+### 4. Task Status Management
+
+- Added a dropdown to manage task status.
+- Implemented Pending and Completed options.
+- Updated the completion status of individual tasks.
+- Ensured that changing one task's status does not affect other tasks.
+
+### 5. Modal Functionality
+
+- Created a separate TaskModal component.
+- Opened the modal using the Add Task button.
+- Implemented Save and Cancel functionality.
+- Used props to communicate between the Task and TaskModal components.
+- Kept task creation logic separate from task rendering logic.
+
+## My Approach
+
+I approached this task by breaking the functionality into smaller parts and managing everything through React state.
+
+### Step 1: Managing Task Data
+
+I created an array of task objects and stored it in React state using the useState hook.
+
+Each task contains its own ID, title, description, and completion status.
+
+### Step 2: Component-Based Structure
+
+I separated the task creation modal into its own component.
+
+The Task component manages the task list and its functionality, while the TaskModal component handles the task creation form.
+
+This helped me maintain a cleaner and more organized component structure.
+
+### Step 3: Adding Tasks
+
+I created a function to receive a new task from the modal and add it to the existing task list.
+
+I used the spread operator to preserve existing tasks while adding the new task.
+
+### Step 4: Rendering Tasks
+
+I used React's dynamic list rendering to display all tasks stored in state.
+
+Whenever the task list changes, React automatically updates the UI.
+
+### Step 5: Deleting Tasks
+
+I implemented a delete function that receives the selected task's ID.
+
+I used the filter method to create a new array excluding the selected task and updated the state with the new array.
+
+### Step 6: Updating Task Status
+
+I implemented a status change function to update the selected task's completion status.
+
+I used the map method to find the task by its ID and update only that task while keeping the remaining tasks unchanged.
+
+### Step 7: Updating the UI
+
+I used React state to manage all task operations.
+
+Instead of manually manipulating DOM elements, I updated the state and allowed React to handle the UI changes.
+
+## What I Learned
+
+### React State Management
+
+I learned how to use the useState hook to store and manage dynamic data inside a React component.
+
+### Immutable State Updates
+
+I understood the importance of not directly modifying state.
+
+I learned how to use array methods such as map and filter along with the spread operator to create updated arrays and objects.
+
+### Props and Component Communication
+
+I learned how to pass data and functions between components using props.
+
+I also understood how a child component can communicate with its parent through callback functions.
+
+### Dynamic Rendering
+
+I learned how React renders arrays of objects dynamically and how unique keys help React identify individual list items.
+
+### Event Handling
+
+I learned how to handle button clicks and dropdown changes using React event handlers.
+
+I also understood the difference between calling a function immediately and passing a function to an event handler.
+
+### Conditional Rendering
+
+I learned how to show and hide the task creation modal using conditional rendering.
+
+### React and DOM Updates
+
+I understood that React automatically updates the UI when state changes.
+
+This helped me understand why direct DOM manipulation is generally unnecessary when working with React.
+
+## Final Outcome
+
+I successfully implemented a dynamic task management system using React.
+
+The application supports:
+
+- Creating tasks dynamically.
+- Displaying tasks from React state.
+- Deleting individual tasks.
+- Updating task completion status.
+- Opening and closing a task creation modal.
+- Updating the UI without page reload.
+
+## Key Takeaway
+
+This task helped me understand how React state, props, event handling, and dynamic rendering work together to build interactive applications.
+
+I learned that instead of manually changing the DOM, I can update the state and let React manage the UI efficiently.
+
+# Day 9 & Day 10 – Data Persistence and Frontend Flow Integration
+
+## Project Overview
+
+During Day 9 and Day 10, I continued developing my Task Management application using React.
+
+The main objectives were to make task data persistent using browser storage and integrate all frontend components into a complete application flow.
+
+I implemented LocalStorage to save task data and connected the Login, Registration, Dashboard, and Task Management components to create a smooth user experience.
+
+## Day 9 – Data Persistence using LocalStorage
+
+### Task Objective
+
+Persist task data in browser storage so that tasks remain available even after refreshing or reopening the application.
+
+### Concepts Covered
+
+- localStorage API
+- JSON serialization and parsing
+- React state management
+- useEffect hook
+- Data persistence
+- State synchronization
+
+### Features Implemented
+
+#### 1. Save Tasks in LocalStorage
+
+- Stored task data in the browser's LocalStorage.
+- Used a unique storage key to save the task list.
+- Converted the task array into a string before storing it.
+- Automatically saved tasks whenever the task state changed.
+
+#### 2. Load Tasks on Page Refresh
+
+- Retrieved previously saved tasks from LocalStorage.
+- Loaded saved tasks into React state when the Task component initialized.
+- Displayed the existing task list instead of resetting to the initial task.
+- Used the initial task data only when no saved data was available.
+
+#### 3. Maintain Data Consistency
+
+- Ensured that newly created tasks were saved.
+- Ensured that deleted tasks were removed from saved data.
+- Ensured that task status changes were persisted.
+- Kept React state and LocalStorage synchronized.
+
+### My Approach
+
+I used React's useState hook to manage the task list and useEffect to synchronize the task state with LocalStorage.
+
+I used JSON serialization to convert the task array into a string for storage and JSON parsing to retrieve it as a JavaScript array.
+
+Whenever the task state changed, the updated data was automatically saved in LocalStorage.
+
+This allowed the application to preserve task data without requiring a backend database.
+
+### What I Learned
+
+- How LocalStorage works in the browser.
+- How to save and retrieve data using the LocalStorage API.
+- How JSON.stringify and JSON.parse work.
+- How to use useEffect to perform side effects.
+- How to initialize React state using previously saved data.
+- How to maintain consistency between React state and browser storage.
+
+## Day 10 – Frontend Flow Integration
+
+### Task Objective
+
+Integrate all frontend components into a single application flow and ensure that the application works smoothly from login to logout.
+
+### Concepts Covered
+
+- Application flow design
+- State transitions
+- Navigation logic
+- React component integration
+- Props and callback functions
+- Conditional rendering
+- Form validation
+- UI-level authentication flow
+
+### Features Implemented
+
+#### 1. Login and Dashboard Navigation
+
+- Connected the Login component with the Dashboard.
+- Implemented navigation after successful form validation.
+- Used React state to control which component is displayed.
+- Prevented unnecessary page reloads during navigation.
+
+#### 2. React Form Validation
+
+- Replaced the previous Vanilla JavaScript validation with React-based validation.
+- Used React state to manage input values and error messages.
+- Implemented email and password validation.
+- Used event handlers to validate form submissions.
+- Displayed validation errors dynamically.
+
+#### 3. Dashboard Navigation
+
+- Integrated Dashboard navigation with the Task Management component.
+- Connected the Dashboard and Task sections.
+- Implemented navigation between different dashboard sections.
+- Used state-based navigation to display the selected section.
+
+#### 4. Task Creation and Persistence
+
+- Integrated task creation into the complete application flow.
+- Connected the TaskModal component with the Task component.
+- Ensured that adding, deleting, and updating tasks worked correctly.
+- Verified that task data remained saved after refreshing the page.
+
+#### 5. Logout Functionality
+
+- Implemented UI-level logout functionality.
+- Returned the user to the Login screen after logout.
+- Reset the application navigation state when logging out.
+- Preserved task data in LocalStorage after logout.
+
+#### 6. Smooth User Experience
+
+- Integrated all components into a connected application.
+- Ensured that navigation worked without page reloads.
+- Maintained consistent task data throughout the application.
+- Verified that existing functionality continued to work after integration.
+
+### My Approach
+
+I started by reviewing the components I had already created, including Login, Registration, Dashboard, Task, TaskModal, and Stats.
+
+I used React state to manage the application flow and determine which component should be displayed.
+
+I connected the Login component to the Dashboard using callback functions passed through props.
+
+I also replaced the previous Vanilla JavaScript form validation with React state-based validation.
+
+Finally, I integrated the task management functionality with LocalStorage and tested the complete application flow, including login, task operations, page refresh, and logout.
+
+### What I Learned
+
+- How to integrate multiple React components into one application.
+- How to manage navigation using React state.
+- How to use props and callback functions for component communication.
+- How to implement form validation using React.
+- How to control application flow using conditional rendering.
+- How to combine LocalStorage with React state.
+- How to preserve data during navigation and logout.
+- How to test an application from beginning to end.
+
+## Final Outcome
+
+Successfully completed Day 9 and Day 10 by implementing data persistence and integrating the frontend components into a complete React Task Management application.
+
+The application now supports:
+
+- Login and Registration navigation.
+- React-based form validation.
+- Dashboard navigation.
+- Dynamic task creation.
+- Task deletion and status updates.
+- Persistent task data using LocalStorage.
+- Loading saved tasks after page refresh.
+- UI-level logout functionality.
+- Complete frontend flow without unnecessary page reloads.
+
+## Key Takeaway
+
+Day 9 helped me understand how to persist application data using LocalStorage and synchronize it with React state.
+
+Day 10 helped me understand how to integrate individual React components into a complete application using state management, props, callback functions, and navigation logic.
+
+Together, these tasks helped me move from building individual React components to developing a complete and interactive frontend application.
